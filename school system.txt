@@ -1,0 +1,78 @@
+                                                 School System
+
+use: spring web,lombok,validation.
+
+create:school Model , school controller.
+
+school Model has:Id,name,age,phoneNumber,email,major,position,salary,yearsOfExperience.
+
+validation:
+
+ID:
+-cannot be null
+@NotEmpty
+-the length of id must be greater than 2
+@Size(min = 2)
+
+Name:
+-cannot be nul
+@NotEmpty
+-the length of name must be greater than 3
+@Size(min = 3)
+-must contain only character
+@Pattern(regexp = "^[A-Za-z]+$")
+
+Age:
+-cannot be null
+@NotNull
+-the age must be greater than 20
+@Min(20)
+
+
+Phone number
+-cannot be null
+@NotNull
+-must start with 05
+@Pattern(regexp = "^05?[0-9]+$")
+
+Email:
+@Email(message = "enter valid email")
+
+Major:
+-cannot be nul
+@NotEmpty
+-must contain only character
+@Pattern(regexp = "^[A-Za-z]+$")
+
+Position:
+-cannot be nul
+@NotEmpty
+-must contain only character
+@Pattern(regexp = "^[A-Za-z]+$")
+-must be full time or part time
+@Pattern(regexp ="^(FullTime|PartTime)$", message = "position must be Full time or part time")
+
+Salary:
+-cannot be null
+@NotNull
+-salary must be positive number
+@Positive(message = "salary must be positive number")
+
+Years of experience:
+-cannot be null
+@NotNull
+-years must be positive number
+@Positive(message = "years must be positive number")
+-years of experince must be greater than 2 years
+@Min(value=2,message = "years of experince must be greater than 2")
+
+
+
+
+
+
+ 
+
+
+
+
